@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Steady</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#23342A;--ink-soft:#4A5B50;--sage-deep:#43604C;--mist:#E4EDE5;--cream:#FBF8F1;--line:rgba(35,52,42,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Manrope',sans-serif;font-size:17px;line-height:1.7;padding:50px 22px 80px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:30px;font-weight:800;margin-bottom:6px}
+.updated{color:var(--ink-soft);font-size:14px;margin-bottom:34px}
+h2{font-size:19px;font-weight:800;margin:30px 0 10px}
+p{color:var(--ink-soft);margin-bottom:14px}
+ul{margin:0 0 14px 20px;color:var(--ink-soft)}
+li{margin-bottom:8px}
+.box{background:#fff;border:2px solid var(--sage-deep);border-radius:16px;padding:22px;margin:20px 0}
+.box p{color:var(--ink);margin:0}
+a{color:var(--sage-deep)}
+.back{display:inline-block;margin-bottom:26px;font-weight:700;color:var(--sage-deep);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back">← Back to Steady</a>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: <span id="d"></span></p>
+
+  <div class="box">
+    <p><strong>The short version:</strong> we collect only what's needed to run Steady and process your payment. We never sell your data, and you can ask us to delete it at any time.</p>
+  </div>
+
+  <h2>What we collect</h2>
+  <p>When you purchase Steady, Razorpay (our payment processor) collects your name, email, phone number, and payment details to process the transaction. We receive your name and email so we can send you access and respond to support requests — we never see or store your full card or UPI details ourselves.</p>
+  <p>When you use the Steady app itself, you sign in with Google. This lets the app save your mood entries, technique history, and streaks to your account, using Firebase (Google's app platform) as the underlying storage.</p>
+
+  <h2>How we use it</h2>
+  <ul>
+    <li>To give you access to the app and bonus materials after purchase</li>
+    <li>To sync your mood and progress data across your own devices</li>
+    <li>To respond to support emails and refund requests</li>
+    <li>To improve Steady based on aggregate, anonymised usage patterns — never your individual entries</li>
+  </ul>
+
+  <h2>What we don't do</h2>
+  <ul>
+    <li>We do not sell, rent, or share your personal data with advertisers or third parties</li>
+    <li>We do not read or review your individual mood entries or journal content</li>
+    <li>We do not use your data to train any AI model</li>
+  </ul>
+
+  <h2>Where your data lives</h2>
+  <p>Your app data (mood entries, streaks, patterns) is stored in Firebase, a Google Cloud service, under industry-standard security practices. Your purchase and contact details are held by us and by Razorpay, in line with Razorpay's own security and PCI-DSS compliance standards.</p>
+
+  <h2>Your rights</h2>
+  <p>You can request a copy of your data, ask us to delete your account and all associated entries, or ask questions about what's stored, at any time by emailing us. We'll respond within 24 hours and complete deletion requests within 7 working days.</p>
+
+  <h2>Cookies</h2>
+  <p>This website uses only essential cookies needed for the checkout process (via Razorpay) and does not use tracking or advertising cookies of its own.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, we'll update the date at the top of this page. Continued use of Steady after changes means you accept the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about your data? Email <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a> and you'll hear back within 24 hours.</p>
+</div>
+<script>document.getElementById('d').textContent = new Date().toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'});</script>
+</body>
+</html>

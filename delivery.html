@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivery Policy — Steady</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#23342A;--ink-soft:#4A5B50;--sage-deep:#43604C;--mist:#E4EDE5;--cream:#FBF8F1;--line:rgba(35,52,42,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Manrope',sans-serif;font-size:17px;line-height:1.7;padding:50px 22px 80px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:30px;font-weight:800;margin-bottom:6px}
+.updated{color:var(--ink-soft);font-size:14px;margin-bottom:34px}
+h2{font-size:19px;font-weight:800;margin:30px 0 10px}
+p{color:var(--ink-soft);margin-bottom:14px}
+.box{background:#fff;border:2px solid var(--sage-deep);border-radius:16px;padding:22px;margin:20px 0}
+.box p{color:var(--ink);margin:0}
+a{color:var(--sage-deep)}
+.back{display:inline-block;margin-bottom:26px;font-weight:700;color:var(--sage-deep);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back">← Back to Steady</a>
+  <h1>Delivery Policy</h1>
+  <p class="updated">Last updated: <span id="d"></span></p>
+
+  <div class="box">
+    <p><strong>Steady is a digital product.</strong> Access is delivered instantly on-screen after successful payment — there is no physical shipping involved.</p>
+  </div>
+
+  <h2>How delivery works</h2>
+  <p>The moment your payment is confirmed by Razorpay, you're automatically redirected to a confirmation page containing a direct link to open the Steady app, along with download links for all three bonus materials (the 7-Day Calm Reset Tracker, Sleep Without the Spiral, and Panic Button Scripts).</p>
+
+  <h2>How long delivery takes</h2>
+  <p>Access is immediate — typically within a few seconds of your payment being confirmed. There is no waiting period, no manual approval, and nothing to be shipped or couriered.</p>
+
+  <h2>If something goes wrong</h2>
+  <p>If your payment succeeded but you weren't redirected to the confirmation page, or a bonus download link doesn't work, please email us with your payment confirmation and we'll send your access details directly within 24 hours.</p>
+
+  <h2>Access duration</h2>
+  <p>Once delivered, your access to the Steady app and all bonus materials is yours for as long as the app remains available, with no recurring charges.</p>
+
+  <h2>Contact</h2>
+  <p>Delivery issues or questions? Email <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a> and you'll hear back within 24 hours.</p>
+</div>
+<script>document.getElementById('d').textContent = new Date().toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'});</script>
+</body>
+</html>
