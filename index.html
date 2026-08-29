@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
 <title>Steady — Your Anxiety Buddy | Calm down in minutes</title>
 <meta name="description" content="Steady is a pocket anxiety buddy. Tell it what you're feeling, and it stays with you until your heart actually feels steady again.">
 <meta property="og:title" content="Steady — Your Anxiety Buddy">
@@ -27,6 +28,7 @@
   --r:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   background:var(--cream);
@@ -127,24 +129,33 @@ h1 em{font-style:normal;color:var(--sage-deep)}
   border:1.5px solid var(--line);background:var(--cream);
   padding:9px 16px;border-radius:100px;font-size:14.5px;font-weight:700;
   color:var(--ink-soft);cursor:pointer;
+  transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease;
 }
-.chip.active{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff}
+.chip:active{transform:scale(.94)}
+.chip.active{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;transform:scale(1.04)}
 .arrow-down{text-align:center;font-size:22px;color:var(--sage);margin:6px 0}
 .match-card{
   background:var(--mist);border-radius:16px;padding:20px;
   display:flex;gap:14px;align-items:center;
+  animation:match-pop .35s ease;
+}
+@keyframes match-pop{
+  0%{opacity:0;transform:translateY(6px) scale(.98)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
 }
 .match-ico{
   width:48px;height:48px;border-radius:50%;background:var(--sage-deep);
   color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+  transition:transform .3s ease;
 }
-.match-card h4{font-size:17px;margin-bottom:3px;font-weight:800}
+.match-card h4{font-size:17px;margin-bottom:3px;font-weight:800;color:var(--ink)}
 .match-card p{font-size:14.5px;color:var(--ink-soft);margin:0}
 
 /* ---------- PROBLEM (condensed) ---------- */
-.problem{background:var(--ink);color:#E9EFE9}
-.problem h2{color:#fff}
-.problem .eyebrow{color:var(--sage)}
+.problem, .dark-section{background:var(--ink);color:#E9EFE9}
+.problem h2, .dark-section h2{color:#fff}
+.problem .eyebrow, .dark-section .eyebrow{color:var(--sage)}
+.dark-section .lede{color:#B9C7BB}
 .pain{
   border-left:2px solid var(--sage);padding:2px 0 2px 20px;
   margin-bottom:18px;font-size:17px;color:#D3DED4;
@@ -155,7 +166,9 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 .techcard{
   background:#fff;border:1px solid var(--line);border-radius:var(--r);
   padding:26px;margin-bottom:16px;box-shadow:var(--shadow);
+  transition:transform .2s ease,box-shadow .2s ease;
 }
+.techcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .clinical-badge{
   display:inline-block;background:var(--mist);color:var(--sage-deep);
   font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
@@ -166,7 +179,7 @@ h1 em{font-style:normal;color:var(--sage-deep)}
   width:52px;height:52px;border-radius:14px;background:var(--mist);
   display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;
 }
-.techcard h3{font-size:20px;margin-bottom:3px;font-weight:800}
+.techcard h3{font-size:20px;margin-bottom:3px;font-weight:800;color:var(--ink)}
 .techcard .tsub{font-size:13.5px;color:var(--sage-deep);font-weight:800;letter-spacing:.03em}
 .techcard p{color:var(--ink-soft);font-size:16px}
 
@@ -180,7 +193,7 @@ h1 em{font-style:normal;color:var(--sage-deep)}
   width:70px;height:70px;border-radius:18px;background:var(--mist);
   display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;
 }
-.report-hl h3{font-size:22px;margin-bottom:6px;font-weight:800}
+.report-hl h3{font-size:22px;margin-bottom:6px;font-weight:800;color:var(--ink)}
 .report-hl p{color:var(--ink-soft);font-size:16px;margin:0}
 .report-hl .rtext{flex:1;min-width:240px}
 
@@ -190,7 +203,9 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 .screen-card{
   background:#fff;border:1px solid var(--line);border-radius:20px;
   overflow:hidden;box-shadow:var(--shadow-lg);
+  transition:transform .2s ease;
 }
+.screen-card:hover{transform:translateY(-4px)}
 .screen-card img{width:100%;display:block}
 .screen-card p{
   padding:16px 18px;font-size:15px;font-weight:700;color:var(--ink);margin:0;
@@ -203,9 +218,11 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 .benefit-hero{
   background:var(--cream);border:2px solid var(--sage);border-radius:20px;
   padding:28px;box-shadow:var(--shadow-lg);
+  transition:transform .2s ease;
 }
+.benefit-hero:hover{transform:translateY(-4px) scale(1.015)}
 .bh-ico{font-size:34px;margin-bottom:12px}
-.benefit-hero h3{font-size:21px;font-weight:800;margin-bottom:6px;line-height:1.25}
+.benefit-hero h3{font-size:21px;font-weight:800;margin-bottom:6px;line-height:1.25;color:var(--ink)}
 .benefit-hero p{color:var(--ink-soft);font-size:16px;margin:0}
 
 /* ---------- FEATURE GRID ---------- */
@@ -214,9 +231,11 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 @media(min-width:1020px){.feat-grid{grid-template-columns:1fr 1fr 1fr}}
 .feat{
   border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;
+  transition:transform .2s ease,box-shadow .2s ease;
 }
+.feat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .feat .fico{font-size:24px;margin-bottom:10px}
-.feat h3{font-size:17px;margin-bottom:5px;font-weight:800}
+.feat h3{font-size:17px;margin-bottom:5px;font-weight:800;color:var(--ink)}
 .feat p{color:var(--ink-soft);font-size:15px}
 
 
@@ -235,7 +254,7 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 .founder-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .founder-photo-empty{font-size:12px;font-weight:700;color:var(--sage-deep);text-align:center;padding:8px}
 .founder-body{flex:1;min-width:240px}
-.founder-name{font-size:21px;font-weight:800;margin-bottom:2px}
+.founder-name{font-size:21px;font-weight:800;margin-bottom:2px;color:var(--ink)}
 .founder-title{font-size:13.5px;color:var(--sage-deep);font-weight:700;letter-spacing:.03em;margin-bottom:14px}
 .founder-body p{font-size:16px;color:var(--ink-soft)}
 .founder-more{margin-top:18px}
@@ -259,7 +278,9 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 .bcard{
   background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);
   border-radius:var(--r);padding:24px;
+  transition:transform .2s ease,background .2s ease;
 }
+.bcard:hover{transform:translateY(-3px);background:rgba(255,255,255,.09)}
 .btag{
   display:inline-block;background:var(--gold);color:#2A2110;
   font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
@@ -272,6 +293,43 @@ h1 em{font-style:normal;color:var(--sage-deep)}
   font-size:14px;font-weight:800;letter-spacing:.03em;
 }
 
+/* ---------- BONUS VISUALS ---------- */
+.bonus-visual{margin:14px 0 4px}
+
+/* Bonus 1: 7-day checklist row */
+.day-row{display:flex;gap:6px;flex-wrap:wrap}
+.day-box{
+  width:34px;height:34px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;color:#C5D2C7;
+  border:1.5px solid rgba(255,255,255,.25);
+  transition:transform .2s ease;
+}
+.bcard:hover .day-box{transform:translateY(-2px)}
+.day-box.checked{
+  background:var(--gold);border-color:var(--gold);color:#2A2110;
+}
+
+/* Bonus 2: sleep checklist lines */
+.sleep-line{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.sleep-line .tick{
+  width:20px;height:20px;border-radius:50%;flex-shrink:0;
+  background:var(--gold);color:#2A2110;font-size:12px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.sleep-line .tick.empty{background:transparent;border:1.5px solid rgba(255,255,255,.3)}
+.sleep-line .bar{height:8px;border-radius:5px;background:rgba(255,255,255,.18);flex:1}
+.sleep-line .bar.short{max-width:60%}
+
+/* Bonus 3: scenario icon grid */
+.script-icons{display:flex;flex-wrap:wrap;gap:10px}
+.script-icon{
+  width:42px;height:42px;border-radius:12px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  transition:transform .2s ease,background .2s ease;
+}
+.bcard:hover .script-icon{transform:scale(1.06)}
 
 
 /* ---------- OFFER ---------- */
@@ -313,7 +371,7 @@ h1 em{font-style:normal;color:var(--sage-deep)}
 .urgency{
   background:var(--gold-soft);border-radius:var(--r);padding:26px;
 }
-.urgency h3{font-size:21px;margin-bottom:12px;font-weight:800}
+.urgency h3{font-size:21px;margin-bottom:12px;font-weight:800;color:var(--ink)}
 .urgency p{font-size:16.5px;color:#4B4023}
 .urgency p+p{margin-top:14px}
 
@@ -327,6 +385,7 @@ details{
 summary{
   cursor:pointer;list-style:none;padding:17px 0;
   font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;gap:14px;
+  color:var(--ink);
 }
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--sage);font-size:22px;line-height:1;font-weight:400}
@@ -409,7 +468,7 @@ footer a{color:#B9C7BB}
 </header>
 
 <!-- ============ SOLUTION — STARTS RIGHT AWAY ============ -->
-<section id="solution">
+<section id="solution" class="dark-section">
   <div class="wrap-wide">
     <p class="eyebrow">Meet your anxiety buddy</p>
     <h2>Steady — built for one job</h2>
@@ -430,7 +489,7 @@ footer a{color:#B9C7BB}
       <div class="arrow-down">↓</div>
       <p class="demo-label">Step 2 · Steady's match, in under a second</p>
       <div class="match-card">
-        <div class="match-ico">🫁</div>
+        <div class="match-ico"><span class="emoji-breath">🫁</span></div>
         <div>
           <h4>4-7-8 Breathing</h4>
           <p>Best for a racing heart — this pattern slows your pulse within 60 seconds by activating your body's natural "rest" response.</p>
@@ -441,7 +500,7 @@ footer a{color:#B9C7BB}
 </section>
 
 <!-- ============ FOUNDER ============ -->
-<section style="background:var(--mist)">
+<section class="dark-section">
   <div class="wrap-wide">
     <p class="eyebrow">Who built this</p>
     <h2>Not built by a company. Built by someone who needed it.</h2>
@@ -471,11 +530,11 @@ footer a{color:#B9C7BB}
   <div class="wrap-wide">
     <p class="eyebrow">Inside the toolkit</p>
     <h2>The same tools therapists use — now in your pocket</h2>
-    <p class="lede">8 real, established methods used in clinical anxiety treatment — restructured so you can use them alone, in the moment, without an appointment.</p>
+    <p class="lede">You don't need eight different apps, or a bookshelf of self-help you never finish. Every real, clinically-established way to calm down is already in here — so the second panic starts, you're never standing there wondering what to do next.</p>
 
     <div class="techcard">
       <div class="techcard-head">
-        <div class="tech-ico">🫁</div>
+        <div class="tech-ico"><span class="emoji-breath">🫁</span></div>
         <div>
           <span class="clinical-badge">Used in clinical anxiety treatment</span>
           <h3>Breathing Techniques</h3>
@@ -596,7 +655,7 @@ footer a{color:#B9C7BB}
 </section>
 
 <!-- ============ BENEFITS ============ -->
-<section style="background:var(--mist)">
+<section class="dark-section">
   <div class="wrap-wide">
     <p class="eyebrow">What actually changes</p>
     <h2>Your life, <span class="highlight-gold">two weeks</span> from now</h2>
@@ -684,21 +743,45 @@ footer a{color:#B9C7BB}
       <div class="bcard">
         <span class="btag">Bonus 1 · Excel sheet</span>
         <h3>The 7-Day Calm Reset Tracker</h3>
-        <p>You feel your own progress instead of just hoping it's working — log your mood, sleep and wins, and watch the sheet prove it to you in numbers.</p>
+        <div class="bonus-visual">
+          <div class="day-row">
+            <span class="day-box checked">M</span>
+            <span class="day-box checked">T</span>
+            <span class="day-box checked">W</span>
+            <span class="day-box checked">T</span>
+            <span class="day-box">F</span>
+            <span class="day-box">S</span>
+            <span class="day-box">S</span>
+          </div>
+        </div>
         <span class="bworth">Worth ₹199 — yours free</span>
       </div>
 
       <div class="bcard">
         <span class="btag">Bonus 2 · Printable PDF</span>
         <h3>Sleep Without the Spiral</h3>
-        <p>You feel your mind actually quiet down at bedtime, instead of switching on the moment your head hits the pillow.</p>
+        <div class="bonus-visual">
+          <div class="sleep-line"><span class="tick">✓</span><span class="bar"></span></div>
+          <div class="sleep-line"><span class="tick">✓</span><span class="bar short"></span></div>
+          <div class="sleep-line"><span class="tick">✓</span><span class="bar"></span></div>
+          <div class="sleep-line"><span class="tick empty"></span><span class="bar short"></span></div>
+        </div>
         <span class="bworth">Worth ₹149 — yours free</span>
       </div>
 
       <div class="bcard">
         <span class="btag">Bonus 3 · PDF</span>
         <h3>Panic Button Scripts</h3>
-        <p>You feel ready instead of frozen — six scripts already written for the exact moments words usually fail you: work, public, night, before a presentation, mid-argument, alone.</p>
+        <div class="bonus-visual">
+          <div class="script-icons">
+            <span class="script-icon" title="Work">💼</span>
+            <span class="script-icon" title="Public">🏙️</span>
+            <span class="script-icon" title="Night">🌙</span>
+            <span class="script-icon" title="Presentation">🎤</span>
+            <span class="script-icon" title="Argument">😠</span>
+            <span class="script-icon" title="Alone">🧍</span>
+          </div>
+        </div>
         <span class="bworth">Worth ₹199 — yours free</span>
       </div>
     </div>
@@ -709,7 +792,7 @@ footer a{color:#B9C7BB}
 <section class="offer" id="buy">
   <div class="wrap">
     <p class="eyebrow">The offer</p>
-    <h2 style="text-align:center">Here's everything you get today</h2>
+    <h2 style="text-align:center">Everything standing between you and your next calm night</h2>
     <div style="height:22px"></div>
 
     <div class="stack">
@@ -730,10 +813,12 @@ footer a{color:#B9C7BB}
              👇 RAZORPAY PAYMENT BUTTON GOES HERE 👇
              Delete the <a> tag below and paste your Razorpay
              embed code (the <form>...<script>...</form> block)
-             exactly in its place.
+             exactly in its place. Until then, this button is
+             intentionally inert (href="javascript:void(0);") so it
+             doesn't jump anywhere when clicked.
         ============================================================= -->
         <p style="margin-top:20px">
-          <a href="#" class="btn">Yes, I want my anxiety buddy</a>
+          <a href="javascript:void(0);" class="btn">Yes, I want my anxiety buddy</a>
           <span class="btn-note">Instant access · UPI, cards, netbanking · refund available on day 8</span>
         </p>
         <!-- ============================================================ -->
@@ -746,6 +831,7 @@ footer a{color:#B9C7BB}
       <div><span>One month of anxiety medication</span><span>₹400–₹800</span></div>
       <div><span>Steady — yours to use every day</span><span>₹149</span></div>
     </div>
+    <p style="margin-top:24px;text-align:center;color:var(--sage-deep);font-weight:700;font-size:16px">You don't need another app, another book, or another "maybe I'll try this later." You need one thing that actually works when it matters — this is it.</p>
   </div>
 </section>
 
@@ -761,7 +847,7 @@ footer a{color:#B9C7BB}
 </section>
 
 <!-- ============ FAQ ============ -->
-<section style="background:var(--mist)">
+<section class="dark-section">
   <div class="wrap-wide">
     <p class="eyebrow">Questions</p>
     <h2>Everything you might be wondering</h2>
@@ -831,6 +917,29 @@ footer a{color:#B9C7BB}
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+// Best-effort check: does this device render the lungs emoji (🫁) properly,
+// or does it show as a blank "tofu" box? If unsupported, swap to 💨 instead.
+// This is a heuristic (canvas width comparison) — not 100% guaranteed on every
+// browser, but 🫁 stays as the real default everywhere unless this actively
+// detects a problem.
+function getBreathEmoji(){
+  try{
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.font = '32px sans-serif';
+    var fallbackWidth = ctx.measureText('\uFFFF').width; // width of a guaranteed-unsupported codepoint
+    var testWidth = ctx.measureText('🫁').width;
+    var supported = Math.abs(testWidth - fallbackWidth) > 2;
+    return supported ? '🫁' : '💨';
+  }catch(e){
+    return '🫁'; // if detection itself fails, keep the real default
+  }
+}
+var BREATH_EMOJI = getBreathEmoji();
+document.querySelectorAll('.emoji-breath').forEach(function(el){
+  el.textContent = BREATH_EMOJI;
+});
+
 // Symptom-matching demo — clickable chips
 (function(){
   var chips = document.querySelectorAll('.chips .chip');
@@ -851,9 +960,16 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       chips.forEach(function(c){c.classList.remove('active')});
       chip.classList.add('active');
       var m = matches[i];
-      card.querySelector('.match-ico').textContent = m.ico;
+      card.querySelector('.match-ico').textContent = (m.ico === '🫁') ? BREATH_EMOJI : m.ico;
       card.querySelector('h4').textContent = m.h;
       card.querySelector('p').textContent = m.p;
+      // retrigger the pop-in animation every click, not just once
+      card.style.animation = 'none';
+      card.offsetHeight; // force reflow
+      card.style.animation = '';
+      var icoEl = card.querySelector('.match-ico');
+      icoEl.style.transform = 'scale(1.25) rotate(-8deg)';
+      setTimeout(function(){ icoEl.style.transform = 'scale(1) rotate(0deg)'; }, 220);
     });
   });
 })();
