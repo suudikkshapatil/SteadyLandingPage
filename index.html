@@ -766,24 +766,7 @@ footer a{color:#B9C7BB}
   <div  class="line2"><span id="count">99</span> seats left</div>
 </div>
 
-<script>
-  let count = 99;
-  const minCount = 3; // never hits zero
-  const el = document.getElementById('count');
 
-  function scheduleNext() {
-    const delay = (7 + Math.random() * 13) * 1000; // 7–20s, non-uniform
-    setTimeout(() => {
-      if (count > minCount) {
-        count -= 1;
-        el.textContent = count;
-      }
-      scheduleNext();
-    }, delay);
-  }
-
-  scheduleNext();
-</script>
   
 <!-- ============ OFFER ============ -->
 <section class="offer" id="buy">
@@ -805,6 +788,24 @@ footer a{color:#B9C7BB}
         <div class="offer-urgency">🔥 Launch price — ends after the first 100 buyers, then ₹499 for good</div>
         <p style="margin-top:20px">
            <div  class="line2"><span id="count">99</span> seats left</div>
+        <script>
+  let count = 99;
+  const minCount = 3; // never hits zero
+  const el = document.getElementById('count');
+
+  function scheduleNext() {
+    const delay = (7 + Math.random() * 13) * 1000; // 7–20s, non-uniform
+    setTimeout(() => {
+      if (count > minCount) {
+        count -= 1;
+        el.textContent = count;
+      }
+      scheduleNext();
+    }, delay);
+  }
+
+  scheduleNext();
+</script>
          <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TVXjpAjyNq1uol" async> </script> </form>
           <span class="btn-note">Instant access · UPI, cards, netbanking · refund available on day 8</span>
         </p>
