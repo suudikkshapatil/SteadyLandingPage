@@ -475,7 +475,7 @@ footer a{color:#B9C7BB}
 .safety b{color:#fff}
 .fine{font-size:12.5px;line-height:1.6;opacity:.8}
   
-/* ---------- STICKY BAR (dot instead of line) ---------- */
+/* ---------- STICKY BAR (dot appears every 12s) ---------- */
 .sticky{
   position:fixed;bottom:0;left:0;right:0;z-index:50;
   background:rgba(251,248,241,.97);backdrop-filter:blur(10px);
@@ -513,17 +513,21 @@ footer a{color:#B9C7BB}
   width:6px;height:6px;
   background:#fff;
   border-radius:50%;
+  opacity:0;
   box-shadow:0 0 5px 2px rgba(255,255,255,.9), 0 0 2px rgba(255,255,255,1);
   transform:translate(-50%,-50%);
-  animation:dot-trace 2.6s linear infinite;
+  animation:dot-trace 12s linear infinite;
   pointer-events:none;
 }
 @keyframes dot-trace{
-  0%   { left:0%;   top:0%; }
-  25%  { left:100%; top:0%; }
-  50%  { left:100%; top:100%; }
-  75%  { left:0%;   top:100%; }
-  100% { left:0%;   top:0%; }
+  0%    { left:0%;   top:0%;   opacity:0; }
+  1%    { opacity:1; }
+  8.3%  { left:100%; top:0%;   opacity:1; }
+  16.6% { left:100%; top:100%; opacity:1; }
+  25%   { left:0%;   top:100%; opacity:1; }
+  33%   { left:0%;   top:0%;   opacity:1; }
+  34%   { opacity:0; }
+  100%  { opacity:0; }
 }
 @media(prefers-reduced-motion:reduce){.sticky .btn::after{animation:none}}
   
