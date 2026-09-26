@@ -724,38 +724,34 @@ footer a{color:#B9C7BB}
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 22px;
   }
 
   .tech-prev, .tech-next {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    min-width: 96px;
+    padding: 12px 22px;
+    border-radius: 10px;
     border: 1.5px solid var(--line, rgba(0,0,0,.15));
     background: #fff;
-    color: var(--sage-deep, #3F4A33);
+    color: var(--ink, #222);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 2px 0 rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.10);
-    transition: transform .15s ease, background .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease;
   }
 
   .tech-prev:hover, .tech-next:hover {
-    background: var(--sage-deep, #3F4A33);
     border-color: var(--sage-deep, #3F4A33);
-    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 2px 0 rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.18);
+    box-shadow: 0 2px 0 rgba(0,0,0,.08), 0 8px 16px rgba(0,0,0,.14);
   }
 
   .tech-prev:active, .tech-next:active {
     transform: translateY(1px);
-    box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.12);
+    box-shadow: 0 0 0 rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.12);
+    background: rgba(0,0,0,.03);
   }
 
   .tech-dots {
@@ -772,11 +768,11 @@ footer a{color:#B9C7BB}
     transition: background .2s ease, transform .2s ease;
   }
   .tech-dots span.is-active {
-    background: currentColor; /* pick up your gold accent if you want */
+    background: currentColor;
     transform: scale(1.3);
   }
 </style>
-
+  
 <script>
 (function () {
   const track  = document.querySelector('.tech-track');
