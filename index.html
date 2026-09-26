@@ -249,19 +249,20 @@ h1 em{font-style:normal;color:var(--sage-deep)}
   padding:16px 18px;font-size:15px;font-weight:700;color:var(--ink);margin:0;
 }
   
-/* ---------- BENEFITS (20% smaller) ---------- */
+/* ---------- BENEFITS (10% larger, gap between icon and text) ---------- */
 .benefits{background:var(--mist)}
-.benefit-hero-grid{display:grid;gap:13px}
+.benefit-hero-grid{display:grid;gap:14px}
 @media(min-width:700px){.benefit-hero-grid{grid-template-columns:1fr 1fr}}
 .benefit-hero{
-  background:var(--cream);border:2px solid var(--sage);border-radius:16px;
-  padding:22px;box-shadow:var(--shadow-lg);
+  background:var(--cream);border:2px solid var(--sage);border-radius:18px;
+  padding:24px;box-shadow:var(--shadow-lg);
   transition:transform .2s ease;
+  display:flex;align-items:flex-start;gap:14px;
 }
 .benefit-hero:hover{transform:translateY(-4px) scale(1.015)}
-.bh-ico{font-size:27px;margin-bottom:10px}
-.benefit-hero h3{font-size:17px;font-weight:800;margin-bottom:5px;line-height:1.25;color:var(--ink)}
-.benefit-hero p{color:var(--ink-soft);font-size:13px;margin:0}
+.bh-ico{font-size:30px;flex-shrink:0;margin-bottom:0}
+.benefit-hero h3{font-size:19px;font-weight:800;margin-bottom:6px;line-height:1.25;color:var(--ink)}
+.benefit-hero p{color:var(--ink-soft);font-size:14px;margin:0}
   
   /*---- Urgency (10% smaller) --- */
   .box { text-align: center; }
