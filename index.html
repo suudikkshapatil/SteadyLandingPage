@@ -736,13 +736,16 @@ footer a{color:#B9C7BB}
 })();
 </script>
 
-<!-- ============ BENEFITS ============ -->
+  
+  <!-- Benefits -->
+
+  
 <section class="dark-section">
   <div class="wrap-wide">
     <p class="eyebrow">What actually changes</p>
     <h2> <span class="highlight-gold">Two Weeks</span> From Now, YOU Could <em>Feel</em> Different</h2>
     <div style="height:22px"></div>
-    <div class="benefit-hero-grid">
+    <div class="benefit-hero-grid two-col-always">
       <div class="benefit-hero">
         <div class="bh-ico">🫂</div>
         <h3>You <span class="highlight-gold">stop feeling helpless</span> during panic</h3>
@@ -767,7 +770,30 @@ footer a{color:#B9C7BB}
   </div>
 </section>
 
-  
+<style>
+  /* Force 2 columns at every breakpoint, overriding any mobile stacking rule */
+  .benefit-hero-grid.two-col-always {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    .benefit-hero-grid.two-col-always {
+      gap: 8px;
+    }
+    .benefit-hero-grid.two-col-always .benefit-hero {
+      padding: 12px 10px; /* tighten padding so 2 columns fit comfortably */
+    }
+    .benefit-hero-grid.two-col-always .bh-ico {
+      font-size: 20px; /* shrink icon a bit if it was scaled up on mobile */
+    }
+    .benefit-hero-grid.two-col-always h3 {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+</style>
 
 <!-- ============ BONUSES ============ -->
 <section class="bonus">
