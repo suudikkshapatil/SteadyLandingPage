@@ -804,6 +804,170 @@ footer a{color:#B9C7BB}
 })();
 </script>
 
+  <!-- ============ SCREENSHOT SHOWCASE ============ -->
+<section style="background:var(--mist)">
+  <div class="wrap-wide">
+    <p class="eyebrow">See it for yourself</p>
+    <h2>This is more than a breathing app</h2>
+    <p class="lede">A real look inside — symptom matching, a full toolkit, mood tracking, your own patterns, and a report you can hand to a therapist.</p>
+
+    <div class="screens-carousel">
+      <div class="screens-track">
+        <div class="screen-card is-active">
+          <img src="images/screen-symptoms.jpg" alt="Steady symptom selection screen">
+          <p>You just say what you're feeling — no forms, no diagnosis.</p>
+        </div>
+        <div class="screen-card">
+          <img src="images/screen-toolkit.jpg" alt="Steady toolkit screen showing multiple techniques">
+          <p>A full matched toolkit — eight techniques, not one breathing video.</p>
+        </div>
+        <div class="screen-card">
+          <img src="images/screen-checkin.jpg" alt="Steady mood check-in screen">
+          <p>You log how anxious you feel, before and after — seeing the number move is its own kind of proof.</p>
+        </div>
+        <div class="screen-card">
+          <img src="images/screen-patterns.jpg" alt="Steady anxiety pattern insights screen">
+          <p>Real patterns emerge the more you check in — your own proof.</p>
+        </div>
+        <div class="screen-card">
+          <img src="images/screen-export.jpg" alt="Steady PDF export screen">
+          <p>Export it as a PDF — walk into a therapist's office with real data.</p>
+        </div>
+      </div>
+
+      <div class="screens-nav">
+        <button type="button" class="screens-prev" aria-label="Previous screenshot">← Prev</button>
+        <span class="screens-dots"></span>
+        <button type="button" class="screens-next" aria-label="Next screenshot">Next →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .screens-carousel { position: relative; }
+
+  .screens-track {
+    position: relative;
+    min-height: 320px; /* adjust to your tallest screenshot + caption */
+  }
+
+  .screen-card {
+    display: none;
+    opacity: 0;
+    transform: translateX(12px);
+    transition: opacity .25s ease, transform .25s ease;
+    width: clamp(50%, 65%, 75%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .screen-card.is-active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .screen-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,.12));
+    display: block;
+  }
+
+  .screen-card p {
+    margin-top: 14px;
+    font-size: 14.5px;
+    color: var(--ink-soft, #555);
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .screens-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .screens-prev, .screens-next {
+    min-width: 96px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 1.5px solid var(--line, rgba(0,0,0,.15));
+    background: #fff;
+    color: var(--ink, #222);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.10);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease;
+  }
+
+  .screens-prev:hover, .screens-next:hover {
+    border-color: var(--sage-deep, #3F4A33);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 0 rgba(0,0,0,.08), 0 8px 16px rgba(0,0,0,.14);
+  }
+
+  .screens-prev:active, .screens-next:active {
+    transform: translateY(1px);
+    box-shadow: 0 0 0 rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.12);
+    background: rgba(0,0,0,.03);
+  }
+
+  .screens-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .screens-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    display: inline-block;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .screens-dots span.is-active {
+    background: var(--sage-deep, #3F4A33);
+    transform: scale(1.3);
+  }
+</style>
+
+<script>
+(function () {
+  const track   = document.querySelector('.screens-track');
+  const cards   = Array.from(track.querySelectorAll('.screen-card'));
+  const nextBtn = document.querySelector('.screens-next');
+  const prevBtn = document.querySelector('.screens-prev');
+  const dotsWrap = document.querySelector('.screens-dots');
+  let i = 0;
+
+  cards.forEach((_, idx) => {
+    const d = document.createElement('span');
+    if (idx === 0) d.classList.add('is-active');
+    d.addEventListener('click', () => go(idx));
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function go(idx) {
+    cards[i].classList.remove('is-active');
+    dots[i].classList.remove('is-active');
+    i = (idx + cards.length) % cards.length;
+    cards[i].classList.add('is-active');
+    dots[i].classList.add('is-active');
+  }
+
+  nextBtn.addEventListener('click', () => go(i + 1));
+  prevBtn.addEventListener('click', () => go(i - 1));
+})();
+</script>
+
   
   <!-- Benefits -->
 
