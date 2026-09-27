@@ -820,16 +820,16 @@ footer a{color:#B9C7BB}
         <div class="screen-card">
           <img src="images/screen-toolkit.jpg" alt="Steady toolkit screen showing multiple techniques">
          </div>
-         <div class="screen-card is-active">
+         <div class="screen-card">
           <img src="images/IMG_1.jpg" alt="Steady symptom selection screen">
          </div>
-        <div class="screen-card is-active">
+        <div class="screen-card">
           <img src="images/IMG_2.jpg" alt="Steady symptom selection screen">
          </div>
-        <div class="screen-card is-active">
+        <div class="screen-card">
           <img src="images/IMG_3.jpg" alt="Steady symptom selection screen">
          </div>
-        <div class="screen-card is-active">
+        <div class="screen-card">
           <img src="images/IMG_4.jpg" alt="Steady symptom selection screen">
          </div>
         <div class="screen-card">
@@ -1170,7 +1170,12 @@ footer a{color:#B9C7BB}
 
   
 <!-- ============ OFFER ============ -->
-<section class="offer offer-compact" id="buy">
+  <div id="buy" class="checkout-trigger">
+  <form>
+    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TVXjpAjyNq1uol" async></script>
+  </form>
+</div>
+<section class="offer offer-compact">
   <div class="wrap">
     <div class="line1">Offer valid for the first 100 users Only!</div>
 
@@ -1305,14 +1310,49 @@ footer a{color:#B9C7BB}
 </footer>
 
 <!-- ============ STICKY BAR ============ -->
-<div class="sticky">
-  <a href="#buy" class="burst" aria-label="See exclusive bonuses and offer">
-    <span class="burst-text">Exclusive<br>Bonus<br>Tap!</span>
-  </a>
-  <a href="#buy" class="btn">Get Instant Access</a>
+<!-- ============ HIDDEN CHECKOUT BUTTON (put this where #buy is) ============ -->
+<div id="buy" class="checkout-trigger">
+  <form>
+    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="Example" async></script>
+  </form>
 </div>
- 
+
+<!-- ============ STICKY BAR ============ -->
+<div class="sticky">
+  <a href="#buy" class="burst" id="stickyBurst" aria-label="See exclusive bonuses and offer">
+    <span class="burst-text">Exclusively<br>@149</span>
+  </a>
+  <a href="#buy" class="btn" id="stickyBtn">Get Instant Access</a>
+</div>
+
+<style>
+  /* Keeps the Razorpay button in the DOM (so it works) but invisible and non-blocking */
+  .checkout-trigger {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  function triggerCheckout(e) {
+    e.preventDefault();
+    var rzpBtn = document.querySelector('#buy .razorpay-payment-button');
+    if (rzpBtn) {
+      rzpBtn.click();
+    } else {
+      // Script hasn't finished loading/rendering the button yet — fall back to scrolling there
+      document.getElementById('buy').scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  document.getElementById('stickyBurst').addEventListener('click', triggerCheckout);
+  document.getElementById('stickyBtn').addEventListener('click', triggerCheckout);
+});
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Best-effort check: does this device render the lungs emoji (🫁) properly,
