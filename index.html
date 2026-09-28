@@ -1315,40 +1315,13 @@ footer a{color:#B9C7BB}
 
 <!-- ============ STICKY BAR ============ -->
 <div class="sticky">
-  <a href="#buy" class="burst" id="stickyBurst" aria-label="See exclusive bonuses and offer">
+  <a href="#buy" class="burst" aria-label="See exclusive bonuses and offer">
     <span class="burst-text">Exclusively<br>@149</span>
   </a>
-  <a href="#buy" class="btn" id="stickyBtn">Get Instant Access</a>
+  <a href="#buy" class="btn">Get Instant Access</a>
 </div>
 
-<style>
-  /* Keeps the Razorpay button in the DOM (so it works) but invisible and non-blocking */
-  .checkout-trigger {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-  }
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  function triggerCheckout(e) {
-    e.preventDefault();
-    var rzpBtn = document.querySelector('#buy .razorpay-payment-button');
-    if (rzpBtn) {
-      rzpBtn.click();
-    } else {
-      // Script hasn't finished loading/rendering the button yet — fall back to scrolling there
-      document.getElementById('buy').scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  document.getElementById('stickyBurst').addEventListener('click', triggerCheckout);
-  document.getElementById('stickyBtn').addEventListener('click', triggerCheckout);
-
+  <script>
   
 document.getElementById('yr').textContent = new Date().getFullYear();
 
